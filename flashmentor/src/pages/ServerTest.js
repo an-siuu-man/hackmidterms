@@ -10,8 +10,8 @@ const ServerTest = () => {
         try {
             // Send name as JSON in the request body
             const response = await axios.post('http://localhost:5000/api/hello', {
-                name,
-                "shivansh"
+                name: name,
+                sexx:"shivansh"
             });
             setData(response.data);  // Save response data in state
         } catch (error) {
