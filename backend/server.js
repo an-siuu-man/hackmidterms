@@ -27,16 +27,17 @@ app.post('/get-by-date', async (req, res) => {
 
         // Group the flashcards by date
         const flashcardsByDate = result.rows.reduce((acc, row) => {
-            const date = row.date;
-            if (!acc[date]) {
-                acc[date] = [];
+            const date = row.date; // Extract the date from the current row
+            if (!acc[date]) { // If the date is not already a key in the accumulator object
+            acc[date] = []; // Initialize it with an empty array
             }
+            // Push the current flashcard (question and answer) into the array for the corresponding date
             acc[date].push({
-                question: row.question,
-                answer: row.answer
+            question: row.question,
+            answer: row.answer
             });
-            return acc;
-        }, {});
+            return acc; // Return the accumulator for the next iteration
+        }, {}); // Initialize the accumulator as an empty object
 
         // Send the response back to the frontend as a JSON object
         res.json({ dates: flashcardsByDate });
