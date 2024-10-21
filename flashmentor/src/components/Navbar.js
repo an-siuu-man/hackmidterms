@@ -17,6 +17,12 @@ export default function Navbar() {
             <ul className="flex items-center">
                 <li className={`px-10 text-[22px] font-[400]`}>
                     <Link className={`${isCurrentPath('/')} transition duration-[200ms]`} to='/' >
+                        Home
+                    </Link>
+                </li>
+
+                <li className={`px-10 text-[22px] font-[400]`}>
+                    <Link className={`${isCurrentPath('/dashboard')} transition duration-[200ms]`} to='/dashboard' >
                         Dashboard
                     </Link>
                 </li>
