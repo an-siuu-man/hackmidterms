@@ -5,6 +5,7 @@ import PageButton from './components/PageButton';
 import Home from './pages/Home';
 import VideoPlayer from './pages/VideoPlayer';
 import AboutUs from './pages/AboutUs';
+import ServerTest from './pages/ServerTest';
 
 
 function App() {
@@ -22,6 +23,9 @@ function App() {
       </div>
     </div>
     </div>
+    <Routes>
+      <Route path='/server-test' element={<ServerTest />} />
+    </Routes>
     </Router>
   );
 }
