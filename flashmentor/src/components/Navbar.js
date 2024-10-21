@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-
+import hmtLogo from '../assets/hmt_logo.png';
 export default function Navbar() {
 
         const location = useLocation();
@@ -11,8 +11,8 @@ export default function Navbar() {
       
         return (
           <nav className="w-full flex justify-between p-[10px]">
-            <div className="flex items-center"><img className='h-[80px] w-[80px] px-[10px]' src="" alt='App logo'/>
-                <h1 className='text-3xl font-[Poppins] font-bold'>HackMidTerms</h1>
+            <div className="flex items-center"><img className='h-[80px] w-[80px] rounded-[50%] ' src={hmtLogo} alt='App logo'/>
+                <h1 className='text-3xl font-[Poppins] font-bold px-[10px]'>HackMidTerms</h1>
             </div>
             <ul className="flex items-center">
                 <li className={`px-10 text-[22px] font-[400]`}>
