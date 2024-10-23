@@ -20,7 +20,8 @@ function App() {
     </div>
     </div>
     <Routes>
-      <Route exact path='/dashboard' element={<Dashboard />} />
+      <Route exact path='/' element={<Home />} />
+      <Route path='/dashboard' element={<Dashboard />} />
     </Routes>
     </Router>
   );
