@@ -15,14 +15,19 @@ function App() {
   return (
     <Router>
     <div className="flex justify-center">
-      <div className="w-[90%]">
+      <div className="w-[95%]">
       <Navbar />
     </div>
     </div>
+    <div className="flex justify-center">
+    <div className="w-[95%]">
     <Routes>
-      <Route exact path='/' element={<Home />} />
-      <Route path='/dashboard' element={<Dashboard />} />
+
+          <Route exact path='/' element={<Home />} />
+          <Route path='/dashboard' element={<Dashboard />} />
     </Routes>
+    </div>
+    </div>
     </Router>
   );
 }

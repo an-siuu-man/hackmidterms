@@ -38,16 +38,16 @@ export default function FlashCard(props) {
 
                         <div className={`${showOptionsList ? '' : 'hidden'} options-list absolute left-[20px]`} 
                              style={{ zIndex: '1000' }}>  {/* Increased zIndex */}
-                            <ul className={`bg-white min-w-[100px] w-[fit-content] text-black rounded-[8px] py-[2px] bg-gray-300 shadow-lg`}>
-                                <li className='text-center text-lg text-left hover:text-[#217efb] rounded-[8px] hover:bg-white m-[5px] p-[2px]'
+                            <ul className={`bg-white min-w-[100px] w-[fit-content] font-[Poppins] rounded-[8px] py-[2px] bg-white border-[1.5px] border-black`}>
+                                <li className='text-center text-lg text-left text-[#333333] hover:text-[#217efb] rounded-[8px] hover:bg-white m-[5px] p-[2px]'
                                 onClick={() => {console.log('Edit')}}>
                                     Edit
                                 </li>
-                                <li className='text-center text-lg text-left hover:text-[#217efb] rounded-[8px] hover:bg-white m-[5px] p-[2px]'
+                                <li className='text-center text-lg text-left text-[#333333] hover:text-[#217efb] rounded-[8px] hover:bg-white m-[5px] p-[2px]'
                                 onClick={() => {console.log('Move To')}}>
                                     Move To
                                 </li>
-                                <li className='text-center text-lg text-left text-[red] rounded-[8px] hover:bg-white m-[5px] p-[2px]'
+                                <li className='text-center text-lg text-left text-[#ff6b6b] hover:text-[red] font-[600] rounded-[8px] hover:bg-white m-[5px] p-[2px]'
                                 onClick={() => {console.log('Delete')}}>
                                     Delete
                                 </li>
