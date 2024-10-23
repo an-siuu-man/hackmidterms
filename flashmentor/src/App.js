@@ -5,7 +5,8 @@ import PageButton from './components/PageButton';
 import Home from './pages/Home';
 import VideoPlayer from './pages/VideoPlayer';
 import AboutUs from './pages/AboutUs';
-import ServerTest from './pages/ServerTest';
+import FlashCard from './components/FlashCard';
+import Dashboard from './pages/Dashboard';
 
 
 function App() {
@@ -16,15 +17,10 @@ function App() {
     <div className="flex justify-center">
       <div className="w-[90%]">
       <Navbar />
-      <div className="flex justify-center">
-      <PageButton text='Dashboard' type='secondary'/>
-      <PageButton text='Video Player' type='primary'/>
-      <PageButton text='About Us' type='secondary'/>
-      </div>
     </div>
     </div>
     <Routes>
-      <Route path='/server-test' element={<ServerTest />} />
+      <Route exact path='/dashboard' element={<Dashboard />} />
     </Routes>
     </Router>
   );
