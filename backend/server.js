@@ -306,4 +306,66 @@ app.post('/move-group', async (req, res) => {
     }
 });
 
+app.post('/update-question', async (req, res) => {
+    const { uid, flashcardID, newQuestion } = req.body;  // Extract uid, flashcardID, and newQuestion from the frontend
+
+    if (!uid || !flashcardID || !newQuestion) {
+        return res.status(400).json({ error: 'UID, flashcardID, and newQuestion are required' });
+    }
+
+    try {
+        // SQL query to update the Question of the flashcard with the given flashcardID
+        const updateQuestionQuery = `
+            UPDATE ${uid}
+            SET "Question" = $1
+            WHERE "UniqueFlashID" = $2
+            RETURNING *;
+        `;
+
+        const result = await pool.query(updateQuestionQuery, [newQuestion, flashcardID]);
+
+        if (result.rowCount === 0) {
+            return res.status(404).json({ message: 'Flashcard not found' });
+        }
+
+        // Send the response back to the frontend
+        res.status(200).json({ message: 'Flashcard question updated successfully.' });
+
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).json({ error: 'Server error' });
+    }
+});
+
+app.post('/update-answer', async (req, res) => {
+    const { uid, flashcardID, newAnswer } = req.body;  // Extract uid, flashcardID, and newAnswer from the frontend
+
+    if (!uid || !flashcardID || !newAnswer) {
+        return res.status(400).json({ error: 'UID, flashcardID, and newAnswer are required' });
+    }
+
+    try {
+        // SQL query to update the Answer of the flashcard with the given flashcardID
+        const updateAnswerQuery = `
+            UPDATE ${uid}
+            SET "Answer" = $1
+            WHERE "UniqueFlashID" = $2
+            RETURNING *;
+        `;
+
+        const result = await pool.query(updateAnswerQuery, [newAnswer, flashcardID]);
+
+        if (result.rowCount === 0) {
+            return res.status(404).json({ message: 'Flashcard not found' });
+        }
+
+        // Send the response back to the frontend
+        res.status(200).json({ message: 'Flashcard answer updated successfully.' });
+
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).json({ error: 'Server error' });
+    }
+});
+
 app.listen(port, () => console.log(`Listening on port ${port}`));
