@@ -21,7 +21,6 @@ code {
   width: 100%;
   max-width: 350px;
   max-height: 500px;
-
   aspect-ratio: 3 / 2; /* Maintain a 3:2 aspect ratio */
   margin: 20px;
   cursor: pointer;
@@ -61,6 +60,10 @@ code {
   padding: 20px;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.flashcard-front:hover {
+  background: linear-gradient(to right, #217efb, #0e4793); /* DodgerBlue to RoyalBlue */
 }
 
 .flashcard-back {
