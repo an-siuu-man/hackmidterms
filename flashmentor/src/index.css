@@ -16,6 +16,11 @@ code {
     monospace;
 }
 
+.home-card {
+  /* perspective: 1000px; */
+  transform: perspective(1000px) rotateX(0deg) rotateY(-20deg) translate3d(0, 0, -20px);
+}
+
 .flashcard, .flashcard-deleted {
   perspective: 1000px;
   width: 100%;

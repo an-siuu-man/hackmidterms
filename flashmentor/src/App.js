@@ -19,10 +19,15 @@ function App() {
       <Navbar />
     </div>
     </div>
+
+    <div className="flex justify-center">
+    <div className="w-[90%]">
     <Routes>
       <Route exact path='/' element={<Home />} />
       <Route path='/dashboard' element={<Dashboard />} />
     </Routes>
+    </div>
+    </div>
     </Router>
   );
 }
