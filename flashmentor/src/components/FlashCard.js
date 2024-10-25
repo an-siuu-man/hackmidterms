@@ -23,7 +23,7 @@ export default function FlashCard(props) {
     }
 
     return (
-        <div className={`flashcard ${flipped ? 'flipped' : ''}`} onClick={handleFlip} style={{ position: 'relative', zIndex: '0' }}>
+        <div className={`flashcard ${flipped ? 'flipped' : ''}`} onClick={handleFlip}>
             <div className={`flashcard-inner`}>
                 <div className={`flashcard-front`} onMouseEnter={handleOptions} onMouseLeave={handleOptions}>
                     <h1 className='text-center w-[100%]'>Front of the flashcard</h1>
@@ -36,18 +36,17 @@ export default function FlashCard(props) {
                             ...
                         </div>
 
-                        <div className={`${showOptionsList ? '' : 'hidden'} options-list absolute left-[20px]`} 
-                             style={{ zIndex: '1000' }}>  {/* Increased zIndex */}
-                            <ul className={`bg-white min-w-[100px] w-[fit-content] text-black rounded-[8px] py-[2px] bg-gray-300 shadow-lg`}>
-                                <li className='text-center text-lg text-left hover:text-[#217efb] rounded-[8px] hover:bg-white m-[5px] p-[2px]'
+                        <div className={`${showOptionsList ? '' : 'hidden'} options-list absolute left-[20px]`} >  
+                            <ul className={`bg-white min-w-[100px] w-[fit-content] text-black rounded-[8px] py-[2px] bg-[#ebeff0] shadow-xl`}>
+                                <li className='text-center text-lg text-left hover:text-[#217efb] rounded-[8px] hover:bg-white m-[5px] p-[2px] duration-[150ms]'
                                 onClick={() => {console.log('Edit')}}>
                                     Edit
                                 </li>
-                                <li className='text-center text-lg text-left hover:text-[#217efb] rounded-[8px] hover:bg-white m-[5px] p-[2px]'
+                                <li className='text-center text-lg text-left hover:text-[#217efb] rounded-[8px] hover:bg-white m-[5px] p-[2px] duration-[150ms]'
                                 onClick={() => {console.log('Move To')}}>
                                     Move To
                                 </li>
-                                <li className='text-center text-lg text-left text-[red] rounded-[8px] hover:bg-white m-[5px] p-[2px]'
+                                <li className='text-center text-lg text-left text-[red] rounded-[8px] hover:bg-white m-[5px] p-[2px] duration-[150ms]'
                                 onClick={() => {console.log('Delete')}}>
                                     Delete
                                 </li>
