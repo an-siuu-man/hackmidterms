@@ -19,6 +19,12 @@ code {
 .home-card {
   /* perspective: 1000px; */
   transform: perspective(1000px) rotateX(0deg) rotateY(-20deg) translate3d(0, 0, -20px);
+  transition: all 0.3s ease;
+}
+
+.home-card-flipped {
+  transform: perspective(1000px) rotateX(0deg) rotateY(160deg) translate3d(0, 0, -20px);
+  transition: all 0.3s ease;
 }
 
 .flashcard, .flashcard-deleted {
