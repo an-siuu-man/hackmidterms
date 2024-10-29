@@ -18,6 +18,7 @@ code {
 
 .home-card {
   /* perspective: 1000px; */
+  background: linear-gradient(to right, #c55151, #FF6b6b);
   transform: perspective(1000px) rotateX(0deg) rotateY(-20deg) translate3d(0, 0, -20px);
   transition: all 0.3s ease;
 }
@@ -26,6 +27,31 @@ code {
   transform: perspective(1000px) rotateX(0deg) rotateY(160deg) translate3d(0, 0, -20px);
   transition: all 0.3s ease;
 }
+
+.home-card-two {
+  /* perspective: 1000px; */
+  background: linear-gradient(to right, #217efb, #0e4793);
+  transform: perspective(1000px) rotateX(0deg) rotateY(20deg) translate3d(0, 0, -20px);
+}
+
+.fade-in {
+  opacity: 0;
+  transform: perspective(1000px) rotateX(0deg) rotateY(-20deg) translate3d(0, 100vh, -20px);
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: perspective(1000px) rotateX(0deg) rotateY(-20deg) translate3d(0, 100vh, -20px);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(1000px) rotateX(0deg) rotateY(-20deg) translate3d(0, 0, -20px);
+  }
+}
+
+
 
 .flashcard, .flashcard-deleted {
   perspective: 1000px;
