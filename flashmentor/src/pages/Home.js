@@ -15,7 +15,7 @@ export default function Home() {
         }
 
         if (leftContainer) {
-            leftContainer.classList.add('fade-in-left-container');
+            leftContainer.classList.add('fade-in-general');
         }
     }, []);
 
@@ -32,11 +32,11 @@ export default function Home() {
                 </div>
             </div>
             <div className="right-container p-[5%] w-[50%]">  
-                <div className="home-card flex justify-center items-center w-[75%] h-[350px] p-[30px] rounded-[40px] shadow-2xl">
+                <div className="home-card flex relative justify-center items-center w-[550px] h-[350px] p-[30px] rounded-[40px] shadow-2xl">
                     <p className="font-[Poppins] text-2xl text-white text-center font-[600]">What is the best part of online learning?</p>
                 </div>
-                <div className="home-card-two flex justify-center items-center w-[70%] h-[300px] rounded-[40px] shadow-2xl">
-                    <p className="font-[Poppins] text-2xl text-white text-center font-[600]">How can you optimize your online learning?</p>
+                <div className="home-card-two flex relative top-[-15%] left-[5%] justify-center items-center w-[550px] h-[350px] p-[30px]  rounded-[40px] shadow-2xl">
+                    <p className="font-[Poppins] text-2xl text-white text-center font-[600]">Ready to optimize your online learning?</p>
                 </div>
             </div>
         </div>
