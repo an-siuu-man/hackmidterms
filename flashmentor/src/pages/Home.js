@@ -7,10 +7,15 @@ export default function Home() {
         // Adds the fade-in class to elements when the component is mounted
         const homeCard = document.querySelector('.home-card');
         const homeCardTwo = document.querySelector('.home-card-two');
+        const leftContainer = document.querySelector('.left-container');
 
         if (homeCard && homeCardTwo) {
             homeCard.classList.add('fade-in');
             homeCardTwo.classList.add('fade-in');
+        }
+
+        if (leftContainer) {
+            leftContainer.classList.add('fade-in-left-container');
         }
     }, []);
 
