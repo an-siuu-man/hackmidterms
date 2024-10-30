@@ -2,38 +2,26 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 const ServerTest = () => {
-    const [name, setName] = useState('');
     const [data, setData] = useState(null);
-    
-    const fetchData = async (e) => {
-        e.preventDefault();
-        try {
-            // Send name as JSON in the request body
-            const response = await axios.post('http://localhost:5000/api/hello', {
-                name: name,
-                sexx:"shivansh"
-            });
-            setData(response.data);  // Save response data in state
-        } catch (error) {
-            console.error('Error fetching data from the server:', error);
-        }
+
+    const testCreateUser = async () => {
+        const res = await axios.post('http://localhost:5000/create-user', {
+            uid : "testuid"
+        });
+        console.log(res.data);
+        setData(res.data);
     };
 
     return (
         <div>
             <h1>Server Test</h1>
-            <form onSubmit={fetchData}>
-                <input 
-                    type='text' 
-                    placeholder='Enter your name' 
-                    value={name}  // Controlled input
-                    onChange={(e) => setName(e.target.value)}  // Update state with input value
-                />
-                <button type='submit'>Submit</button>
-            </form>
-            {data && <p>{data.express}</p>}  {/* Display response from server */}
+            <button onClick={testCreateUser}>Create new User</button>
+            <h2>Response:</h2>
+            <pre>{JSON.stringify(data, null, 2)}</pre>
         </div>
     );
+
+
 }
 
 export default ServerTest;

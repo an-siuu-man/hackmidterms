@@ -7,6 +7,7 @@ import VideoPlayer from './pages/VideoPlayer';
 import AboutUs from './pages/AboutUs';
 import FlashCard from './components/FlashCard';
 import Dashboard from './pages/Dashboard';
+import ServerTest from './pages/ServerTest';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
     </div>
     <Routes>
       <Route exact path='/dashboard' element={<Dashboard />} />
+      <Route exact path='/server' element={<ServerTest />} />
     </Routes>
     </Router>
   );
