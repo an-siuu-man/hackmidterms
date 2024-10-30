@@ -4,18 +4,9 @@ import { useState } from "react";
 export default function Home() {
     
     useEffect(() => {
-        const homeCard = document.querySelector('.home-card');
-        const homeCardTwo = document.querySelector('.home-card-two');
-        const leftContainer = document.querySelector('.left-container');
-        const home = document.querySelector('.home');
-        // if (homeCard && homeCardTwo) {
-        //     homeCard.classList.add('fade-in');
-        //     homeCardTwo.classList.add('fade-in');
-        // }
 
-        // if (leftContainer) {
-        //     leftContainer.classList.add('fade-in-general');
-        // }
+        const home = document.querySelector('.home');
+
         if (home) {
             home.classList.add('fade-in-general');
         }
