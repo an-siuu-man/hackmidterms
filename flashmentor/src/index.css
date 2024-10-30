@@ -16,7 +16,7 @@ code {
     monospace;
 }
 
-.home-card {
+.home-card, .home-card-two {
   /* perspective: 1000px; */
   background: linear-gradient(to right, #c55151, #FF6b6b);
   transform: perspective(1000px) rotateX(0deg) rotateY(-20deg) translate3d(0, 0, -20px);
@@ -31,7 +31,7 @@ code {
 .home-card-two {
   /* perspective: 1000px; */
   background: linear-gradient(to right, #217efb, #0e4793);
-  transform: perspective(1000px) rotateX(0deg) rotateY(20deg) translate3d(0, 0, -20px);
+  /* transform: perspective(1000px) rotateX(0deg) rotateY(20deg) translate3d(0, 0, -20px); */
 }
 
 .fade-in {

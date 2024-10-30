@@ -8,19 +8,22 @@ export default function Home() {
         const homeCard = document.querySelector('.home-card');
         const homeCardTwo = document.querySelector('.home-card-two');
         const leftContainer = document.querySelector('.left-container');
+        const home = document.querySelector('.home');
+        // if (homeCard && homeCardTwo) {
+        //     homeCard.classList.add('fade-in');
+        //     homeCardTwo.classList.add('fade-in');
+        // }
 
-        if (homeCard && homeCardTwo) {
-            homeCard.classList.add('fade-in');
-            homeCardTwo.classList.add('fade-in');
-        }
-
-        if (leftContainer) {
-            leftContainer.classList.add('fade-in-general');
+        // if (leftContainer) {
+        //     leftContainer.classList.add('fade-in-general');
+        // }
+        if (home) {
+            home.classList.add('fade-in-general');
         }
     }, []);
 
     return (
-        <div className='flex justify-between'>
+        <div className='home flex justify-between'>
             <div className="left-container w-[50%]">
                 <h1 className="font-[Poppins] text-5xl mt-20 mb-10">HackMidTerms</h1>
                 <p className="font-[Poppins] text-2xl font-[300]">
