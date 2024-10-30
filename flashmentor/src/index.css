@@ -16,51 +16,7 @@ code {
     monospace;
 }
 
-
-
-/*================================================= ANIMATIONS =================================================*/
-
-
-@keyframes fadeInThree {
-  from {
-    opacity: 0;
-    transform: translateX(-100vw);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: perspective(1000px) rotateX(0deg) rotateY(-20deg) translate3d(0, 100vh, -20px);
-  }
-  to {
-    opacity: 1;
-    transform: perspective(1000px) rotateX(0deg) rotateY(-20deg) translate3d(0, 0, -20px);
-  }
-}
-
-
-@keyframes fadeInTwo {
-  from {
-    opacity: 0;
-    transform: perspective(1000px) rotateX(0deg) rotateY(20deg) translate3d(0, 100vh, -20px);
-  }
-  to {
-    opacity: 1;
-    transform: perspective(1000px) rotateX(0deg) rotateY(20deg) translate3d(0, 0, -20px);
-  }
-}
-
-/*================================================= ANIMATIONS END =================================================*/
-
-
-
-
-.home-card {
+.home-card, .home-card-two {
   /* perspective: 1000px; */
   background: linear-gradient(to right, #c55151, #FF6b6b);
   transform: perspective(1000px) rotateX(0deg) rotateY(-20deg) translate3d(0, 0, -20px);
@@ -75,25 +31,39 @@ code {
 .home-card-two {
   /* perspective: 1000px; */
   background: linear-gradient(to right, #217efb, #0e4793);
-  transform: perspective(1000px) rotateX(0deg) rotateY(20deg) translate3d(0, 0, -20px);
+  /* transform: perspective(1000px) rotateX(0deg) rotateY(20deg) translate3d(0, 0, -20px); */
 }
 
 .fade-in {
   opacity: 0;
-  transform: perspective(1000px) rotateX(0deg) rotateY(-20deg) translate3d(0, 100vh, -20px);
-  animation: fadeIn 0.8s ease forwards;
+  animation: fadeIn 0.7s ease forwards;
 }
 
-.fade-in-two {
-  opacity: 0;
-  transform: perspective(1000px) rotateX(0deg) rotateY(20deg) translate3d(0, 100vh, -20px);
-  animation: fadeInTwo 1.2s ease forwards;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: perspective(1000px) rotateX(0deg) rotateY(-20deg) translate3d(0, 20vh, -20px);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(1000px) rotateX(0deg) rotateY(-20deg) translate3d(0, 0, -20px);
+  }
 }
 
-.fade-in-three {
+.fade-in-general {
   opacity: 0;
-  transform: translateX(-100vw);
-  animation: fadeInThree 0.6s ease forwards;
+  animation: fadeInGeneral 0.7s ease forwards;
+}
+
+@keyframes fadeInGeneral {
+  from {
+    opacity: 0;
+    transform: translateY(20vh);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 
