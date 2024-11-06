@@ -6,9 +6,31 @@ export default function Home() {
     useEffect(() => {
 
         const home = document.querySelector('.home');
+        const homeCard = document.querySelector('.home-card');
+        const homeCardTwo = document.querySelector('.home-card-two');
+        const leftContainer = document.querySelector('.left-container');
 
         if (home) {
-            home.classList.add('fade-in-general');
+
+            if (leftContainer) {
+                leftContainer.classList.add('fade-in-general');
+            }
+
+            if (homeCard) {
+                homeCard.classList.add('fade-in-fast');
+                if (!homeCard.classList.contains('context-menu-added')) {
+                    homeCard.addEventListener('contextmenu', (e) => {
+                        e.preventDefault();
+                        console.log('Right-click detected on homeCard');
+                    });
+                    homeCard.classList.add('context-menu-added');
+                }
+            }
+            
+            if (homeCardTwo) {
+                homeCardTwo.classList.add('fade-in-slow');
+            }
+
         }
     }, []);
 

@@ -2,6 +2,14 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root {
+  --slow-transition-time: 0.6s;
+  --fast-transition-time: 0.4s;
+}
+
+
 body {
   margin: 0;
   font-family: -apple-system,'Inter Tight', 'Segoe UI', 'Roboto', 'Oxygen',
@@ -34,12 +42,17 @@ code {
   /* transform: perspective(1000px) rotateX(0deg) rotateY(20deg) translate3d(0, 0, -20px); */
 }
 
-.fade-in {
+.fade-in-slow {
   opacity: 0;
-  animation: fadeIn 0.7s ease forwards;
+  animation: fadeIn var(--slow-transition-time) ease forwards;
 }
 
-@keyframes fadeIn {
+.fade-in-fast {
+  opacity: 0;
+  animation: fadeIn var(--fast-transition-time) ease forwards;
+}
+
+@keyframes fadeIn{
   from {
     opacity: 0;
     transform: perspective(1000px) rotateX(0deg) rotateY(-20deg) translate3d(0, 20vh, -20px);
