@@ -1,59 +1,53 @@
-
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import OptionsList from './OptionsList';
 
 export default function FlashCard(props) {
-
     const [flipped, setFlipped] = useState(false);
-    const [showOptions, setShowOptions] = useState(false);
     const [showOptionsList, setShowOptionsList] = useState(false);
-    
+    const [optionsListPosition, setOptionsListPosition] = useState({ x: 0, y: 0 });
+
+
+    const handleContextMenu = (event) => {
+        event.preventDefault();
+        setOptionsListPosition({ x: event.clientX, y: event.clientY });
+        setShowOptionsList(true);
+    };
+
     const handleFlip = () => {
         setFlipped(!flipped);
         if (!flipped) {
             setShowOptionsList(false);
         }
-    }
+    };
 
-    const handleOptions = () => {
-        setShowOptions(!showOptions);
-    }
-    
-    const handleOptionsList = () => {
-        setShowOptionsList(!showOptionsList);
-    }
+    useEffect(() => {
+        const flashcard = document.querySelector('.flashcard');
+
+        if (flashcard) {
+            flashcard.addEventListener('blur', () => {
+                setShowOptionsList(false);
+            }   );
+        }
+        
+        
+        document.addEventListener('click', () => {
+            setShowOptionsList(false);
+        });
+
+        return () => {
+            document.removeEventListener('click', () => {
+                setShowOptionsList(false);
+            });
+        };
+
+    }, []);
 
     return (
-        <div className={`flashcard ${flipped ? 'flipped' : ''}`} onClick={handleFlip}>
+        <div className={`flashcard ${flipped ? 'flipped' : ''} `} onClick={handleFlip} onContextMenu={handleContextMenu}>
             <div className={`flashcard-inner`}>
-                <div className={`flashcard-front`} onMouseEnter={handleOptions} onMouseLeave={handleOptions}>
+                <div className={`flashcard-front `}>
                     <h1 className='text-center w-[100%]'>Front of the flashcard</h1>
-                    <div className={`block min-w-[20px] ml-[auto] mb-[auto] hover:text-black relative`} 
-                         onClick={ (e) => {e.stopPropagation()}}
-                        style={{zIndex: 1 }}>
-                        
-                        <div className={`${showOptions ? 'opacity-1' : 'opacity-0 '} duration-[150ms] flashcard-options flex items-center justify-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2`} 
-                            onClick={ (e) => {e.stopPropagation(); handleOptionsList();}}>
-                            ...
-                        </div>
-
-                        <div className={`${showOptionsList ? '' : 'hidden'} options-list absolute left-[20px]`} >  
-                            <ul className={`bg-white min-w-[100px] w-[fit-content] text-black rounded-[8px] py-[2px] bg-[#ebeff0] shadow-xl`}>
-                                <li className='text-center text-lg text-left hover:text-[#217efb] rounded-[8px] hover:bg-white m-[5px] p-[2px] duration-[150ms]'
-                                onClick={() => {console.log('Edit')}}>
-                                    Edit
-                                </li>
-                                <li className='text-center text-lg text-left hover:text-[#217efb] rounded-[8px] hover:bg-white m-[5px] p-[2px] duration-[150ms]'
-                                onClick={() => {console.log('Move To')}}>
-                                    Move To
-                                </li>
-                                <li className='text-center text-lg text-left text-[red] rounded-[8px] hover:bg-white m-[5px] p-[2px] duration-[150ms]'
-                                onClick={() => {console.log('Delete')}}>
-                                    Delete
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
+                    {showOptionsList && <OptionsList position={optionsListPosition} />}
                 </div>
                 <div className={`flashcard-back`}>
                     <h1 className='text-center'>Back</h1>

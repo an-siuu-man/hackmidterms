@@ -12,7 +12,7 @@ export default function Dashboard() {
 
     return (
         <div className = 'dashboard'>
-            <div className='flex space-x-[60px]'> {/* Added horizontal space */}
+            <div className='flex space-x-[30px]'> {/* Added horizontal space */}
                 <FlashCard />
                 <FlashCard />
             </div>
